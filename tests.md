@@ -1,6 +1,6 @@
 # Should I write a test for X?
 
-(Or: Should I TDD?)
+(Also: Should I TDD?)
 
 * When you break something later in the future and you’ll be super stressed, you’ll get instant feedback on what you broke instead of scratching your head and wasting hours.
 * When you change something later, for example a structure of an object hierarchy or some type definitions, the tests will guide you to what changes are exactly needed to make the rest of the code work with the change.
