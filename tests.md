@@ -2,6 +2,14 @@
 
 (Also: Should I TDD?)
 
+Every once in a while, I would contemplate this question.
+Because really, who really wants to write tests?
+
+To help myself get motivated, I started curating a short list of reasons of why tests are useful.
+Usually I'd add a new reason whenever I realized, in retrospective, how tests would have helped me in a certain situation.
+
+So here it is:
+
 * When you break something later in the future and you’ll be super stressed, you’ll get instant feedback on what you broke instead of scratching your head and wasting hours.
 * When you change something later, for example a structure of an object hierarchy or some type definitions, the tests will guide you to what changes are exactly needed to make the rest of the code work with the change.
   * Example: Changing the a response object returned by the API.
@@ -13,3 +21,8 @@
 * If you pause working on a feature before finishing it, when return to it and run the tests, it will give you an idea of where you were.
   * Breaking down tests into smaller units of functionality improves this even more.
   * Creating "TODO" tests that fail in advance helps it even more.
+
+
+## When you might not want to write tests
+* Production is on fire
+* It's for code that's very likely to be thrown out
