@@ -5,24 +5,28 @@
 Every once in a while, I would contemplate this question.
 Because really, who really wants to write tests?
 
-To help myself get motivated, I started curating a short list of reasons of why tests are useful.
-Usually I'd add a new reason whenever I realized, in retrospective, how tests would have helped me in a certain situation.
+I usually remember that I think that it's a good idea, but I don't always remember *why* it's a good idea.
 
-So here it is:
+To remind myself, I started putting my thoughts into a note. In time it turned into the following list of reasons of why tests are useful.
 
-* When you break something later in the future and you’ll be super stressed, you’ll get instant feedback on what you broke instead of scratching your head and wasting hours.
-* When you change something later, for example a structure of an object hierarchy or some type definitions, the tests will guide you to what changes are exactly needed to make the rest of the code work with the change.
-  * Example: Changing the a response object returned by the API.
-* When writing the test you will find out subtle but critical bugs or design flaws that otherwise might elude you.
-  * If you only test the whole thing after you've done writing the whole feature, and it will fail, it would take you much longer to debug through the parts of the system instead of working with the immediate problem that causes the tests to fail.
-* When creating or modifying any functionality that is more than one function, testing each function separately will give you the confidence that you are really done with one part of the change, and then can move on to the next one. Instead of writing a bunch of things that either one of them has a bug, or all of them, or some of them.
-* Tests provide faster feedback loops than full system tests. Especially when tests are done with manual steps.
-* Writing a test makes you more deliberate - in design and attention to detail - about the expected output of a unit, so you can plan ahead of time instead of making changes as afterthoughts.
-* If you pause working on a feature before finishing it, when return to it and run the tests, it will give you an idea of where you were.
-  * Breaking down tests into smaller units of functionality improves this even more.
-  * Creating "TODO" tests that fail in advance helps it even more.
+Usually I'd add a new reason in retrospective, when I realized how tests would have helped me at that situation. So here it is.
+This is mostly relevant to _new_ code, but may also apply to existing code (and it's easier to write tests for new code).
 
+## Why write tests?
 
-## Maybe not write tests when
-* Production is on fire
-* It's for code that's very likely to be thrown out
+* At some point in time, you, or a team member, is going to break this piece of code, and it's going to happen at the most inconvenient time, under time pressure and stress. With tests in place you’ll get instant feedback on what broke instead of debugging for hours. It's good for your health.
+* When you change something later ‫-‬ the definition of a function, a type, or an object hierarchy, the test will guide you to the required changes to make the rest of the code compatible with that change. Lean on the tests.
+  * Example: Changing a response object returned by an API.
+* Writing tests will help you find bugs and design flaws faster.
+  * If you only test the entire change after completing coding it, and it won't work (you know it rarely works the first time), you will need to spend time finding the exact location of the issue, while requiring you to debug through whole parts of the system. Tests will allow you to contain each issue you are tackling along the way.
+* When the change requires modification of multiple functions or classes, testing each unit separately gives you confidence that you are really done with one part of the change, so can move on to the next one. Instead of dealing with multiple pieces of functionality, and therefore multiple potential issues, at once.
+* Tests provide faster feedback loops than full system tests. Especially when these contain manual steps.
+* Writing a test makes you think more deliberately about design, about inputs and outputs, and in general require you pay more attention to detail. You will get a better overall picture of the change, so you can implement it better.
+  * This is mostly beneficial with TDD.
+* If you come back to a task that has tests in place, these will quickly give you a good idea of where you stopped.
+  * The smaller the unit tests, the greater this benefit.
+  * Creating empty failing tests with good names will further help.
+
+## When not to write tests
+
+* The code is likely to be thrown away.
