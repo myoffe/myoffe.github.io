@@ -23,6 +23,6 @@ So here it is:
   * Creating "TODO" tests that fail in advance helps it even more.
 
 
-## When you might not want to write tests
+## Maybe not write tests when
 * Production is on fire
 * It's for code that's very likely to be thrown out
